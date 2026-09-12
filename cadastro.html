@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Junte-se à ONG Construindo Futuros. Cadastre-se como voluntário ou doador e ajude a transformar vidas na nossa comunidade.">
+    <title>Cadastro de Voluntários e Apoiadores - ONG Construindo Futuros</title>
+    <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+
+<body>
+    <!-- CABEÇALHO E NAVEGAÇÃO PRINCIPAL -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="brand-logo">
+                <img src="img/ong_logo" height="200px" width="200px" alt="Logotipo da ONG Construindo Futuros">
+                <span>Construindo Futuros</span>
+            </a>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre Nós</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="cadastro.html" class="active">Seja Voluntário</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL (FORMULÁRIO DE CADASTRO SEMÂNTICO) -->
+    <main>
+        <section class="form-section">
+            <div class="container">
+                <div class="form-wrapper">
+
+                    <div class="form-header">
+                        <span class="badge">Faça a Diferença</span>
+                        <h1>Cadastre-se na Nossa Rede</h1>
+                        <p>Preencha os dados abaixo para se voluntariar ou se tornar um apoiador da ONG Construindo
+                            Futuros.</p>
+                    </div>
+
+                    <form action="#" method="POST">
+                        <!-- FIELDSET 1: DADOS PESSOAIS -->
+                        <fieldset>
+                            <legend>1. Dados Pessoais</legend>
+
+                            <div class="form-grid">
+                                <div class="form-group full-width">
+                                    <label for="nome">Nome Completo: *</label>
+                                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo"
+                                        required autocomplete="name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cpf">CPF: *</label>
+                                    <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                                        placeholder="000.000.000-00"
+                                        title="Digite um CPF válido no formato 000.000.000-00">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="data_nasc">Data de Nascimento: *</label>
+                                    <input type="date" id="data_nasc" name="data_nasc" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">E-mail: *</label>
+                                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com"
+                                        required autocomplete="email">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="telefone">Telefone / WhatsApp: *</label>
+                                    <input type="tel" id="telefone" name="telefone" required
+                                        pattern="\(\d{2}\)\s?\d{4,5}-\d{4}" placeholder="(11) 99999-9999"
+                                        title="Digite seu telefone no formato (11) 99999-9999" autocomplete="tel">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- FIELDSET 2: ENDEREÇO -->
+                        <fieldset>
+                            <legend>2. Endereço e Localização</legend>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="cep">CEP: *</label>
+                                    <input type="text" id="cep" name="cep" required pattern="\d{5}-\d{3}"
+                                        placeholder="00000-000" title="Digite um CEP válido no formato 00000-000"
+                                        autocomplete="postal-code">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cidade">Cidade: *</label>
+                                    <input type="text" id="cidade" name="cidade" required placeholder="Sua cidade"
+                                        autocomplete="address-level2">
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label for="endereco">Endereço Completo (Rua, Nº, Bairro): *</label>
+                                    <input type="text" id="endereco" name="endereco" required
+                                        placeholder="Ex: Rua Jardim das Flores, 123 - Centro"
+                                        autocomplete="street-address">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- FIELDSET 3: INTERESSE E ATUAÇÃO -->
+                        <fieldset>
+                            <legend>3. Como Você Quer Contribuir?</legend>
+
+                            <div class="form-grid">
+                                <div class="form-group full-width">
+                                    <label for="tipo_interesse">Área de Interesse Principal: *</label>
+                                    <select id="tipo_interesse" name="tipo_interesse" required>
+                                        <option value="" disabled selected>Selecione uma opção...</option>
+                                        <option value="reforco_escolar">Voluntariado - Reforço Escolar e Leitura
+                                        </option>
+                                        <option value="esportes">Voluntariado - Treino Esportivo e Recreação</option>
+                                        <option value="cozinha">Voluntariado - Apoio na Cozinha Solidária</option>
+                                        <option value="doador_financeiro">Doador Financeiro Mensal</option>
+                                        <option value="doador_alimentos">Doador de Alimentos e Materiais</option>
+                                        <option value="outro">Outra Forma de Contribuição</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label for="mensagem">Mensagem / Observações (Opcional):</label>
+                                    <textarea id="mensagem" name="mensagem" rows="4"
+                                        placeholder="Conte-nos um pouco sobre suas motivações ou disponibilidade de horários..."></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- AÇÕES DO FORMULÁRIO -->
+                        <div class="form-actions">
+                            <button type="reset" class="btn btn-outline">Limpar Formulário</button>
+                            <button type="submit" class="btn btn-primary">Concluir Cadastro</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ SEMÂNTICO -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Construindo Futuros</h3>
+                    <p>Uma organização sem fins lucrativos comprometida com o acolhimento, educação e futuro das nossas
+                        crianças.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="index.html#sobre">Sobre Nós</a></li>
+                        <li><a href="projetos.html">Nossos Projetos</a></li>
+                        <li><a href="cadastro.html">Seja Voluntário</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Ajude a ONG</h4>
+                    <ul>
+                        <li><a href="cadastro.html">Faça uma Doação</a></li>
+                        <li><a href="cadastro.html">Trabalho Voluntário</a></li>
+                        <li><a href="index.html#contato">Seja um Doador Mensal</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 ONG Construindo Futuros. Todos os direitos reservados.</p>
+                <p>Desenvolvido com carinho por <strong>Douglas Caique</strong></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
