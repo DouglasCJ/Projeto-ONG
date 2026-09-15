@@ -15,7 +15,8 @@
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="brand-logo">
-                <img src="img/ong_logo.png" height="100px" width="100px" alt="Logotipo da ONG Construindo Futuros">
+                <img src="img/ong_logo.png" alt="Logotipo da ONG Construindo Futuros">
+                <span>Construindo Futuros</span>
             </a>
             <nav class="main-nav" aria-label="Navegação principal">
                 <ul>
@@ -34,7 +35,7 @@
         <!-- HERO REDUZIDO DE PROJETOS -->
         <section class="hero-section">
             <div class="container" style="text-align: center;">
-                <span class="badge">Nossas Causa</span>
+                <span class="badge" style="margin: 0 auto 1rem auto;">Nossa Causa</span>
                 <h1 class="section-title">Iniciativas que Transformam Realidades</h1>
                 <p class="section-subtitle">Desenvolvemos projetos contínuos com foco no desenvolvimento humano,
                     acolhimento infantil e fortalecimento da comunidade.</p>
@@ -44,24 +45,22 @@
         <!-- LISTA DETALHADA DE PROJETOS -->
         <section class="projects-section">
             <div class="container">
-                <div class="projects-grid" style="grid-template-columns: 1fr; gap: 3.5rem;">
+                <div style="display: flex; flex-direction: column; gap: 3rem;">
 
                     <!-- PROJETO 1: EDUCAÇÃO -->
-                    <article class="project-card"
-                        style="display: grid; grid-template-columns: 1fr 1fr; align-items: center;">
-                        <figure class="project-figure" style="height: 100%; min-height: 320px;">
+                    <article class="project-card-horizontal">
+                        <figure class="project-figure">
                             <img src="img/projeto_educacao_.png"
                                 alt="Crianças estudando com voluntários em oficina de alfabetização">
                             <figcaption class="sr-only">Oficina de Leitura e Alfabetização</figcaption>
                         </figure>
-                        <div class="project-body" style="padding: 2.5rem;">
+                        <div class="project-body">
                             <span class="badge">Educação Integral</span>
                             <h3>Oficina de Leitura e Reforço Escolar</h3>
                             <p>Proporcionamos um ambiente acolhedor no contra-turno escolar, focado em superar
                                 dificuldades de aprendizagem, estimular o gosto pela leitura e desenvolver habilidades
                                 sócio-emocionais através da literatura infantil.</p>
-                            <ul
-                                style="margin-bottom: 1.5rem; color: var(--text-muted); list-style: disc; padding-left: 1.25rem;">
+                            <ul class="project-list">
                                 <li>Atendimento de segunda a sexta-feira.</li>
                                 <li>Acervo comunitário com mais de 1.500 livros infantis.</li>
                                 <li>Acompanhamento pedagógico individualizado.</li>
@@ -73,18 +72,14 @@
                     </article>
 
                     <!-- PROJETO 2: ESPORTE -->
-                    <article class="project-card"
-                        style="display: grid; grid-template-columns: 1fr 1fr; align-items: center;">
-                        <div class="project-body" style="padding: 2.5rem; order: 1;">
-                            <span class="badge"
-                                style="background-color: var(--secondary-light); color: var(--secondary);">Saúde e
-                                Inclusão</span>
+                    <article class="project-card-horizontal">
+                        <div class="project-body" style="order: 1;">
+                            <span class="badge" style="background-color: var(--secondary-light); color: var(--secondary);">Saúde e Inclusão</span>
                             <h3>Escolinha de Esportes & Cidadania</h3>
                             <p>Utilizamos o esporte como ferramenta de inclusão social, ensino de valores como respeito
                                 e disciplina, prevenção à violência e promoção da saúde física e mental de crianças e
                                 adolescentes.</p>
-                            <ul
-                                style="margin-bottom: 1.5rem; color: var(--text-muted); list-style: disc; padding-left: 1.25rem;">
+                            <ul class="project-list">
                                 <li>Modalidades: Futebol, Basquete e Xadrez.</li>
                                 <li>Torneios comunitários integrativos aos finais de semana.</li>
                                 <li>Fornecimento de uniforme e equipamentos esportivos gratuitos.</li>
@@ -93,7 +88,7 @@
                                 <a href="cadastro.html" class="btn btn-secondary">Apoie este Projeto</a>
                             </div>
                         </div>
-                        <figure class="project-figure" style="height: 100%; min-height: 320px; order: 2;">
+                        <figure class="project-figure" style="order: 2;">
                             <img src="img/projeto_esporte_.png"
                                 alt="Jovens participando de aula de futebol comunitária">
                             <figcaption class="sr-only">Projeto Esporte & Cidadania</figcaption>
@@ -101,21 +96,19 @@
                     </article>
 
                     <!-- PROJETO 3: NUTRIÇÃO -->
-                    <article class="project-card"
-                        style="display: grid; grid-template-columns: 1fr 1fr; align-items: center;">
-                        <figure class="project-figure" style="height: 100%; min-height: 320px;">
+                    <article class="project-card-horizontal">
+                        <figure class="project-figure">
                             <img src="img/projeto_alimentacao.png"
                                 alt="Voluntários servindo refeições saudáveis em cozinha comunitária">
                             <figcaption class="sr-only">Cozinha Comunitária e Nutrição Solidária</figcaption>
                         </figure>
-                        <div class="project-body" style="padding: 2.5rem;">
+                        <div class="project-body">
                             <span class="badge">Segurança Alimentar</span>
                             <h3>Nutrição Solidária e Cozinha Comunitária</h3>
                             <p>Acreditamos que a alimentação saudável é o primeiro passo para a dignidade. O projeto
                                 oferece refeições quentes diariamente para as crianças assistidas e kits de alimentos
                                 para suas famílias.</p>
-                            <ul
-                                style="margin-bottom: 1.5rem; color: var(--text-muted); list-style: disc; padding-left: 1.25rem;">
+                            <ul class="project-list">
                                 <li>Mais de 1.200 refeições preparadas mensalmente.</li>
                                 <li>Acompanhamento com nutricionista voluntária.</li>
                                 <li>Distribuição periódica de cestas de hortifruti orgânico.</li>
@@ -179,6 +172,7 @@
             </div>
         </div>
     </footer>
+    <script src="JS/script.js" defer></script>
 </body>
 
 </html>
