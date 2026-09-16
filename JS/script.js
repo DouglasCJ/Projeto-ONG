@@ -1,8 +1,3 @@
-/**
- * ONG CONSTRUINDO FUTUROS - SCRIPT DE INTERATIVIDADE (JS)
- * Desenvolvido para proporcionar excelente experiência do usuário (UX),
- * acessibilidade, validações dinâmicas e animações fluidas.
- */
 
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
