@@ -18,6 +18,11 @@
                 <img src="img/ong_logo.png" alt="Logotipo da ONG Construindo Futuros">
                 <span>Construindo Futuros</span>
             </a>
+            <button class="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav class="main-nav" aria-label="Navegação principal">
                 <ul>
                     <li><a href="index.html">Início</a></li>
@@ -45,10 +50,18 @@
         <!-- LISTA DETALHADA DE PROJETOS -->
         <section class="projects-section">
             <div class="container">
-                <div style="display: flex; flex-direction: column; gap: 3rem;">
+                <!-- BARRA DE FILTROS POR CATEGORIA -->
+                <div class="project-filter-bar">
+                    <button class="filter-btn active" data-filter="all">Todos os Projetos</button>
+                    <button class="filter-btn" data-filter="educacao">Educação & Leitura</button>
+                    <button class="filter-btn" data-filter="esporte">Esporte & Cidadania</button>
+                    <button class="filter-btn" data-filter="nutricao">Nutrição Solidária</button>
+                </div>
+
+                <div class="projects-list" style="display: flex; flex-direction: column; gap: 3rem;">
 
                     <!-- PROJETO 1: EDUCAÇÃO -->
-                    <article class="project-card-horizontal">
+                    <article class="project-card-horizontal" data-category="educacao">
                         <figure class="project-figure">
                             <img src="img/projeto_educacao_.png"
                                 alt="Crianças estudando com voluntários em oficina de alfabetização">
@@ -65,16 +78,19 @@
                                 <li>Acervo comunitário com mais de 1.500 livros infantis.</li>
                                 <li>Acompanhamento pedagógico individualizado.</li>
                             </ul>
-                            <div>
+                            <div class="btn-group">
                                 <a href="cadastro.html" class="btn btn-primary">Seja Tutor Voluntário</a>
+                                <button class="btn btn-outline" data-open-modal="educacao">Ver Detalhes</button>
                             </div>
                         </div>
                     </article>
 
                     <!-- PROJETO 2: ESPORTE -->
-                    <article class="project-card-horizontal">
+                    <article class="project-card-horizontal" data-category="esporte">
                         <div class="project-body" style="order: 1;">
-                            <span class="badge" style="background-color: var(--secondary-light); color: var(--secondary);">Saúde e Inclusão</span>
+                            <span class="badge"
+                                style="background-color: var(--secondary-light); color: var(--secondary);">Saúde e
+                                Inclusão</span>
                             <h3>Escolinha de Esportes & Cidadania</h3>
                             <p>Utilizamos o esporte como ferramenta de inclusão social, ensino de valores como respeito
                                 e disciplina, prevenção à violência e promoção da saúde física e mental de crianças e
@@ -84,8 +100,9 @@
                                 <li>Torneios comunitários integrativos aos finais de semana.</li>
                                 <li>Fornecimento de uniforme e equipamentos esportivos gratuitos.</li>
                             </ul>
-                            <div>
+                            <div class="btn-group">
                                 <a href="cadastro.html" class="btn btn-secondary">Apoie este Projeto</a>
+                                <button class="btn btn-outline" data-open-modal="esporte">Ver Detalhes</button>
                             </div>
                         </div>
                         <figure class="project-figure" style="order: 2;">
@@ -96,7 +113,7 @@
                     </article>
 
                     <!-- PROJETO 3: NUTRIÇÃO -->
-                    <article class="project-card-horizontal">
+                    <article class="project-card-horizontal" data-category="nutricao">
                         <figure class="project-figure">
                             <img src="img/projeto_alimentacao.png"
                                 alt="Voluntários servindo refeições saudáveis em cozinha comunitária">
@@ -113,8 +130,9 @@
                                 <li>Acompanhamento com nutricionista voluntária.</li>
                                 <li>Distribuição periódica de cestas de hortifruti orgânico.</li>
                             </ul>
-                            <div>
+                            <div class="btn-group">
                                 <a href="cadastro.html" class="btn btn-primary">Doar Alimentos</a>
+                                <button class="btn btn-outline" data-open-modal="nutricao">Ver Detalhes</button>
                             </div>
                         </div>
                     </article>
@@ -168,7 +186,7 @@
 
             <div class="footer-bottom">
                 <p>&copy; 2026 ONG Construindo Futuros. Todos os direitos reservados.</p>
-                <p>Desenvolvido com carinho por <strong>Douglas Caique</strong></p>
+                <p>Desenvolvido por <strong>Douglas Caique</strong></p>
             </div>
         </div>
     </footer>
