@@ -62,7 +62,15 @@ Projeto-ONG/
 ├── CSS/
 │   └── estilos.css        # Estilos globais, componentes e responsividade
 ├── JS/
-│   └── script.js          # Lógica das interatividades e consumo da API ViaCEP
+│   ├── main.js            # Ponto de entrada – importa e inicializa todos os módulos
+│   ├── menu.js            # Menu mobile responsivo
+│   ├── counters.js        # Contadores animados
+│   ├── scrolls.js         # Scroll‑to‑top e ScrollSpy
+│   ├── projects.js        # Filtros e modais de projetos
+│   ├── form.js            # Máscaras, validação e consulta de CEP
+│   ├── storage.js         # Auto‑save do formulário via localStorage
+│   ├── toast.js           # Sistema de notificações toast
+│   └── modals.js          # Helpers de validação e modal de sucesso
 ├── img/                   # Logotipo, banners e imagens dos projetos
 │   ├── brand_banner.png
 │   ├── ong_logo.png
@@ -99,7 +107,9 @@ Projeto-ONG/
 Este projeto foi elaborado como trabalho prático para a disciplina de **Desenvolvimento Front-end para Web**, aplicando os conceitos fundamentais de:
 - **HTML5 Semântico** para marcação e acessibilidade;
 - **CSS3 Avançado** para estilização, layout responsivo (Flexbox e Grid) e animações;
-- **JavaScript ES6+** para dinamismo, manipulação do DOM, controle de eventos e consumo de APIs externas (ViaCEP).
+- **JavaScript ES6 Modules** (`import`/`export`) para organização modular do código em arquivos independentes e autossuficientes, com baixo acoplamento e alta coesão;
+- **Web Storage API** (`localStorage`) para persistência de rascunhos do formulário entre sessões;
+- **Fetch API** com `async/await` para consumo da API REST ViaCEP.
 
 ---
 
