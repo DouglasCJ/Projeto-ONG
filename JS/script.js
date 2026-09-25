@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectFilters();
     initProjectModals();
     initFormValidationAndMasks();
+    initFormAutoSave();
 });
 
 /* ==========================================================================
@@ -466,7 +467,10 @@ function initFormValidationAndMasks() {
             // Exibe mensagem de sucesso visual
             showSuccessModal(inputNome ? inputNome.value : 'Voluntário');
             form.reset();
-            
+
+            // Limpa o rascunho salvo após envio bem-sucedido
+            clearFormDraft();
+
             // Remove classes de validação
             form.querySelectorAll('.is-valid, .is-invalid').forEach(el => {
                 el.classList.remove('is-valid', 'is-invalid');
@@ -595,3 +599,104 @@ function showToast(title, message, type = 'info', duration = 4000) {
         setTimeout(() => toast.remove(), 350);
     }, duration);
 }
+
+/* ==========================================================================
+   9. AUTO-SAVE DE FORMULÁRIO COM LOCALSTORAGE
+   ========================================================================== */
+const FORM_DRAFT_KEY = 'ong_cadastro_rascunho';
+
+// Campos do formulário que serão salvos/restaurados
+const FORM_FIELDS = [
+    'nome', 'cpf', 'data_nasc', 'email',
+    'telefone', 'cep', 'cidade', 'endereco',
+    'tipo_interesse', 'mensagem'
+];
+
+/**
+ * Salva todos os valores dos campos do formulário no localStorage.
+ */
+function saveFormDraft() {
+    const form = document.querySelector('form');
+    if (!form) return;
+
+    const draft = {};
+    FORM_FIELDS.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) draft[id] = el.value;
+    });
+
+    localStorage.setItem(FORM_DRAFT_KEY, JSON.stringify(draft));
+}
+
+/**
+ * Restaura os valores salvos no localStorage para os campos do formulário.
+ * Exibe um toast informando o usuário.
+ */
+function restoreFormDraft() {
+    const raw = localStorage.getItem(FORM_DRAFT_KEY);
+    if (!raw) return;
+
+    try {
+        const draft = JSON.parse(raw);
+        let hasData = false;
+
+        FORM_FIELDS.forEach(id => {
+            const el = document.getElementById(id);
+            if (el && draft[id]) {
+                el.value = draft[id];
+                hasData = true;
+            }
+        });
+
+        if (hasData) {
+            showToast(
+                'Rascunho Restaurado',
+                'Encontramos dados não enviados anteriormente e os restauramos para você.',
+                'info',
+                5000
+            );
+        }
+    } catch (e) {
+        // Se o JSON estiver corrompido, limpa silenciosamente
+        localStorage.removeItem(FORM_DRAFT_KEY);
+    }
+}
+
+/**
+ * Remove o rascunho do localStorage.
+ */
+function clearFormDraft() {
+    localStorage.removeItem(FORM_DRAFT_KEY);
+}
+
+/**
+ * Inicializa o auto-save: restaura rascunho ao carregar e
+ * salva automaticamente a cada modificação nos campos.
+ * O botão "Limpar Formulário" também apaga o rascunho.
+ */
+function initFormAutoSave() {
+    const form = document.querySelector('form');
+    if (!form) return;
+
+    // Restaura rascunho ao entrar na página
+    restoreFormDraft();
+
+    // Salva automaticamente ao digitar / selecionar
+    FORM_FIELDS.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('input', saveFormDraft);
+            el.addEventListener('change', saveFormDraft);
+        }
+    });
+
+    // Limpa o rascunho ao clicar em "Limpar Formulário"
+    const resetBtn = form.querySelector('[type="reset"]');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            clearFormDraft();
+            showToast('Formulário Limpo', 'O rascunho salvo também foi apagado.', 'info', 3000);
+        });
+    }
+}
+

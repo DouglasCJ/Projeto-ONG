@@ -934,6 +934,7 @@ textarea:focus {
     transform: translateY(8px) rotate(45deg);
 }
 
+
 .mobile-menu-toggle.is-active span:nth-child(2) {
     opacity: 0;
 }
@@ -945,6 +946,13 @@ textarea:focus {
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: flex;
+        order: -1;
+
+    }
+
+    .brand-logo {
+        order: 0;
+        /* Logo fica no centro/direita */
     }
 
     .main-nav {
