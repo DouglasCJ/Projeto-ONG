@@ -89,7 +89,7 @@ Projeto-ONG/
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/SeuUsuario/Projeto-ONG.git
+   git clone https://github.com/DouglasCJ/Projeto-ONG.git
    ```
 
 2. **Acesse a pasta do projeto:**
